@@ -1,0 +1,19 @@
+# Do not commit datasets
+data_raw/
+data_downloads/
+*.zip
+*.csv
+*.tsv
+*.json
+*.jsonl
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# macOS
+.DS_Store
+
