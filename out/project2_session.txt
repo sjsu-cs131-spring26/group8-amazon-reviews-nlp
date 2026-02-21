@@ -1,0 +1,13 @@
+Script started on 2026-02-21 16:19:12-05:00
+bash-4.4$ wc -l data/samples/amz_sample_1000.csv
+1001 data/samples/amz_sample_1000.csv
+bash-4.4$ head -5 out/top10_categories.txt
+     13 Handmade Jewellery
+     12  Shoes  Accessories
+     12 Beauty
+     11 Grocery
+     11 Golf Equipment
+bash-4.4$ exit
+exit
+
+Script done on 2026-02-21 16:19:29-05:00
