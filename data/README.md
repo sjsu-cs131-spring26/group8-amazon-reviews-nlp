@@ -28,6 +28,11 @@ https://www.kaggle.com/datasets/saurav9786/amazon-product-reviews
    kaggle datasets download -d saurav9786/amazon-product-reviews
    unzip amazon-product-reviews.zip -d amazon_reviews
 
+
+5. COMMIT no.2 :: added most popular categories, and most popular items, based on how much people buy them.
+
+
+
 ## Notes
 - Do NOT commit dataset files to GitHub.
 - Only instructions and code should be tracked.
