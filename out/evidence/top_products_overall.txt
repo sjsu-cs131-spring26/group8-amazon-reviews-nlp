@@ -1,0 +1,21 @@
+rank,asin,categoryName,boughtInLastMonth,stars,reviews
+1,B0BQJY4Q8K,Janitorial  Sanitation Supplies,20000,4.8,34839
+2,B08DH161T6,Diet  Nutrition Products,20000,4.6,9044
+3,B085XRS7KP,Paper  Plastic Household Supplies,20000,4.5,9414
+4,B01N46DBTN,Grocery,10000,4.7,13033
+5,B07JGF236Q,Home  Kitchen,10000,4.7,11278
+6,B074Q537B9,Beauty,10000,4.7,9649
+7,B08468BNF9,Grocery,10000,4.7,8056
+8,B00BMDH3HM,Household Cleaning,10000,4.7,6069
+9,B01HH198KW,Health  Personal Care,10000,4.7,4551
+10,B09KTDSMHR,Paper  Plastic Household Supplies,10000,4.7,3986
+11,B09BDDNCFH,Pet Supplies,10000,4.7,2809
+12,B0877QFYDK,Janitorial  Sanitation Supplies,10000,4.7,2753
+13,B09QNBLPC7,Paper  Plastic Household Supplies,10000,4.7,2140
+14,B017TXO2TU,Grocery,10000,4.7,1535
+15,B0B8TP6Y7K,Janitorial  Sanitation Supplies,10000,4.7,1271
+16,B00LH3DMUO,Household Supplies,10000,4.6,645365
+17,B00JJDL0Y4,Home  Kitchen,10000,4.6,8849
+18,B01MZ1FC46,Health  Personal Care,10000,4.6,7441
+19,B0787GLBMV,Beauty,10000,4.5,163381
+20,B08DVFZTTG,Household Cleaning,10000,4.5,90851
