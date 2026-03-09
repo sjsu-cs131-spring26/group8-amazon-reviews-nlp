@@ -14,8 +14,8 @@ Align on one stakeholder persona, one decision question, sprint scope, and assig
   - Each person: one sentence on what the stakeholder needs from this dataset.
    - Jasleen: The stakeholder primarily needs to understand how the star rating of a product and how many ratings said product has impacts a consumer’s decision to buy a product from their platform. 
    - Pranavi: The stakeholder most likely doesn’t understand code, so we need to make the code easy to understand for them so they can know that this dataset can provide important information for their online shopping business.
-   - Vishalkiran: Agreed with what Jasleen said.
-   - Tunir: Didn’t say anything when asked.
+   - Vishalkiran: The stakeholder needs clear insights from the data that help them understand what factors influence customers to buy products on their platform.
+   - Tunir: There's a lot of things that the stakeholder can get from this dataset, primarily they can better understand how to efficiently make money on their online shopping platform.
 
 
 2) Stakeholder persona (10 min)
