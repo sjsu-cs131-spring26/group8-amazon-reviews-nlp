@@ -1,0 +1,57 @@
+Meeting 2 Notes: Decision Review and Finalize Brief
+
+Date/Time:   08.03.2026
+Facilitator: Vishalkiran Raichur
+Attendees: << everyone >>
+
+Evidence reviewed
+
+	A1: Cleaning + analysis completed (EDA performed; no duplicates found). Rankings generated on 	   	    purchases, ratings, and review_counts.
+
+	A2: Identified top-performing products with significantly high demand (some reaching ~3M monthly 	    purchases, others in the 10k–20k range).
+
+	A3: Beauty products appear to be among the top sellers.
+
+
+
+Trust check: Data cleaned and validated; no major issues identified during analysis.
+
+Assumption test: Assumption that high purchase volume correlates with strong demand and potential inventory investment; need further breakdown (e.g., what kind of beauty products via regex check).
+
+
+
+Final recommendation (draft)
+
+	R1: Increase inventory investment in top-performing, high-demand products.
+
+	R2: Promote high-ranking beauty products, as they trend among top sellers.
+
+	R3 (optional): Conduct deeper category analysis (regex classification) to identify which specific 	beauty product types are driving sales.
+
+
+
+Final risks and limitations
+
+	L1: Beauty category not yet segmented — unclear which subcategories drive performance.
+
+	L2: Correlation and trend graphs still pending (Jasleen to complete by EOD).
+
+	L3: Recommendations may shift after deeper trend and correlation analysis.
+
+
+
+Final action items
+
+	Jasleen: Finish correlation and trend graphs (due EOD): Completed and shared visualizations with 	         team.
+
+
+	Pranavi: Finalize analysis script (due TBD): Clean, reproducible script committed/shared.
+
+
+	Tunir: Complete assigned task (due: TBD): Task delivered and reviewed.
+
+
+	Vishalkiran: Manage boards and ensure task tracking alignment (due ongoing): Updated and 	               	             organized board.
+
+Team: Perform regex check to categorize beauty products (due TBD): Categorized breakdown with summary insights.
+
