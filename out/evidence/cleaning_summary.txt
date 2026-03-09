@@ -1,0 +1,8 @@
+Cleaning summary
+input_path=data/amz_ca_total_products_data_processed.csv
+output_clean_path=out/clean/cleaned_amz_ca.csv
+total_rows=2165926
+kept_rows=2165926
+dropped_rows=0
+
+drop_reasons:

@@ -1,0 +1,3 @@
+"asin","title","imgUrl","productURL","stars","reviews","price","listPrice","categoryName","isBestSeller","boughtInLastMonth"
+"B07CV4L6HX","Green Leaf WW3D Wonder Extension Cord Winder, Gray, 150 Foot","https://m.media-amazon.com/images/I/81cRe0AVC4L._AC_UL320_.jpg","https://www.amazon.ca/dp/B07CV4L6HX","4.4","2876","47.69","0.0","Industrial  Scientific","False","0"
+"B09N1HGY74","8pcs Toilet Seat Bumpers Universal Toilet Replacement Bumper for Bidet Attachment Toilet Seat Bumper Pads with Strong Adhesive for Home, Hotel, Hospital","https://m.media-amazon.com/images/I/512CpB-EP5L._AC_UL320_.jpg","https://www.amazon.ca/dp/B09N1HGY74","3.8","55","10.99","0.0","Industrial  Scientific","False","100"

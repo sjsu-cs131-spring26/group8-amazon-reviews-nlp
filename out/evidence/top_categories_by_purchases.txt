@@ -1,0 +1,11 @@
+rank,categoryName,total_boughtInLastMonth
+1,Beauty,3470100
+2,Grocery,1609450
+3,Home  Kitchen,1251950
+4,Pet Supplies,1063400
+5,Health  Personal Care,988750
+6,Health Care Products,711300
+7,Toys  Games,678800
+8,Office Products,550100
+9,Home Storage  Organization,510900
+10,Baby,507700
