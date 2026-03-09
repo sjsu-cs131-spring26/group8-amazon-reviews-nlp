@@ -1,0 +1,4 @@
+       boughtInLastMonth   stars    reviews
+boughtInLastMonth    1.000   -0.013   -0.044
+stars               -0.013    1.000   -0.136
+reviews             -0.044   -0.136    1.000
