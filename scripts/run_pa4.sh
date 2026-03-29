@@ -41,9 +41,18 @@ mkdir -p "$OUT_DIR" "$LOG_DIR"
 #}
 
 clean_data() {
-  awk -F',' 'BEGIN{OFS="\t"} NR>1 {
-    gsub(/"/,"")
-    # print all 11 columns in proper order
+  awk 'BEGIN {
+    OFS = "\t"
+    FPAT = "([^,]*)|(\"([^\"]|\"\")+\")"
+  }
+  {
+    for (i = 1; i <= NF; i++) {
+      gsub(/^"|"$/, "", $i)
+      gsub(/""/, "\"", $i)
+      gsub(/^[[:space:]]+|[[:space:]]+$/, "", $i)
+      if ($i == "") $i = "NA"
+    }
+
     print $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11
   }' "$1"
 }
@@ -56,6 +65,40 @@ clean_data "$INPUT" > "$OUT_DIR"/clean.tsv
 # saving sample after cleaning it
 head -n 5 "$OUT_DIR"/clean.tsv > "$OUT_DIR"/sample_after.txt
 
+
+normalize_stars() {
+ awk -F'\t' 'BEGIN { OFS="\t" }
+ NR==1 {
+  print $0, "rating_type"
+  next
+ }
+ {
+  raw = $5
+  cleaned = tolower(raw)
+
+  gsub(/^ +| +$/, "", cleaned)
+
+  if (cleaned == "" || cleaned == "na") {
+   stars = "0.00"
+   rating_type = "UNRATED"
+  } else {
+   gsub(/[^0-9.]/, "", cleaned)
+
+   if (cleaned == "") {
+    stars = "0.00"
+    rating_type = "UNRATED"
+   } else {
+    stars_num = cleaned + 0
+    stars = sprintf("%.2f", stars_num)
+    rating_type = (stars_num > 0 ? "RATED" : "UNRATED")
+   }
+  }
+
+  $5 = stars
+  print $0, rating_type
+ }' "$1"
+}
+
 #-----------------------------------------------------------------------------------------------------------------------------#
 
 # step 2: filtering dataset
@@ -66,7 +109,8 @@ filter_data() {
   ' "$1"
 }
 
-filter_data "$OUT_DIR"/clean.tsv > "$OUT_DIR"/filtered.tsv
+normalize_stars "$OUT_DIR"/clean.tsv > "$OUT_DIR"/normalized.tsv
+filter_data "$OUT_DIR"/normalized.tsv > "$OUT_DIR"/filtered.tsv
 
 #-----------------------------------------------------------------------------------------------------------------------------#
 
@@ -162,9 +206,34 @@ END{
 
 signal_discovery "$OUT_DIR"/filtered.tsv > "$OUT_DIR"/signals.tsv
 
+rating_summary() {
+ awk -F'\t' 'BEGIN { OFS="\t" }
+ NR==1 { next }
+
+ {
+  type = $NF
+  count[type]++
+  total++
+ }
+
+ END {
+  print "rating_type", "count", "percentage"
+  if ("RATED" in count) {
+   pct = (total > 0) ? (count["RATED"]/total)*100 : 0
+   printf "RATED\t%d\t%.2f%%\n", count["RATED"], pct
+  }
+  if ("UNRATED" in count) {
+   pct = (total > 0) ? (count["UNRATED"]/total)*100 : 0
+   printf "UNRATED\t%d\t%.2f%%\n", count["UNRATED"], pct
+  }
+ }' "$1"
+}
+
+rating_summary "$OUT_DIR"/normalized.tsv > "$OUT_DIR"/rating_summary.tsv
 #-----------------------------------------------------------------------------------------------------------------------------#
 
 # output messages / done
+
 
 echo "pipeline and tasks completed successfully!"
 echo "outputs written in: $OUT_DIR"
