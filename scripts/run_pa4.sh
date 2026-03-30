@@ -3,6 +3,12 @@ set -euo pipefail
 
 #-----------------------------------------------------------------------------------------------------------------------------#
 
+# group writing permissions
+
+chmod g+w /mnt/scratch/CS131_jelenag/projects/team08_sec2/group8-amazon-reviews-nlp/scripts/run_pa4.sh
+
+#-----------------------------------------------------------------------------------------------------------------------------#
+
 # input, output,  and directories
 
 INPUT="${1:-/mnt/scratch/CS131_jelenag/projects/team08_sec2/group8-amazon-reviews-nlp/data/samples/amz_sample_1000.csv}"
