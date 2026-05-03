@@ -1,0 +1,115 @@
+Job [fd0c96e0349647d48cf9073ff633be1b] submitted.
+Waiting for job output...
+26/04/30 22:31:36 INFO SparkEnv: Registering MapOutputTracker
+26/04/30 22:31:36 INFO SparkEnv: Registering BlockManagerMaster
+26/04/30 22:31:36 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/04/30 22:31:36 INFO SparkEnv: Registering OutputCommitCoordinator
+26/04/30 22:31:37 INFO MetricsConfig: Loaded properties from hadoop-metrics2.properties
+26/04/30 22:31:37 INFO MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+26/04/30 22:31:37 INFO MetricsSystemImpl: google-hadoop-file-system metrics system started
+26/04/30 22:31:38 INFO DataprocSparkPlugin: Registered 188 driver metrics
+26/04/30 22:31:38 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at projecttwo-m.c.projecttwo-494921.internal./10.128.0.3:8032
+26/04/30 22:31:38 INFO AHSProxy: Connecting to Application History server at projecttwo-m.c.projecttwo-494921.internal./10.128.0.3:10200
+26/04/30 22:31:39 INFO Configuration: resource-types.xml not found
+26/04/30 22:31:39 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/04/30 22:31:40 INFO YarnClientImpl: Submitted application application_1777586229027_0004
+26/04/30 22:31:41 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at projecttwo-m.c.projecttwo-494921.internal./10.128.0.3:8030
+26/04/30 22:31:43 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+26/04/30 22:31:44 INFO GoogleHadoopOutputStream: hflush(): No-op due to rate limit (RateLimiter[stableRate=0.2qps]): readers will *not* yet see flushed data for gs://dataproc-temp-us-central1-94667674826-oxsz2zke/6f9e1e88-97af-43c9-b404-42e900034a4d/spark-job-history/application_1777586229027_0004.inprogress [CONTEXT ratelimit_period="1 MINUTES" ]
+Spark version: 3.5.3
+Reading from: gs://amz__dataset/amz_ca_total_products_data_processed.csv
+Writing to:   gs://amz__dataset/output
+Total cleaned rows: 1988016
+
+=== Main comparison table (top 20) ===
++--------------------------+------------+-------------+--------------+-----------------+---------+---------------------+-----------------------+----------------+
+|categoryName              |price_bucket|product_count|avg_list_price|avg_current_price|avg_stars|avg_bought_last_month|total_bought_last_month|avg_discount_pct|
++--------------------------+------------+-------------+--------------+-----------------+---------+---------------------+-----------------------+----------------+
+|Beauty                    |MID         |11042        |4.5           |18.17            |4.21     |172.5                |1905050                |16.36           |
+|Beauty                    |LOW         |3713         |2.36          |7.83             |4.27     |260.0                |965250                 |22.87           |
+|Grocery                   |LOW         |3681         |0.94          |5.99             |4.05     |201.2                |740600                 |24.32           |
+|Grocery                   |MID         |7202         |2.92          |19.23            |3.94     |85.6                 |616400                 |17.12           |
+|Home  Kitchen             |MID         |1794         |6.19          |19.89            |4.39     |343.0                |615300                 |17.45           |
+|Health  Personal Care     |MID         |1311         |5.33          |20.24            |4.43     |435.4                |570750                 |16.45           |
+|Pet Supplies              |MID         |5181         |4.69          |19.72            |4.2      |109.2                |565850                 |15.87           |
+|Beauty                    |HIGH        |3319         |11.41         |47.1             |4.32     |146.9                |487500                 |15.96           |
+|Health Care Products      |MID         |4158         |3.95          |19.23            |3.99     |102.6                |426800                 |15.84           |
+|Toys  Games               |MID         |3094         |6.82          |21.19            |4.26     |121.4                |375750                 |17.55           |
+|Home  Kitchen             |HIGH        |1064         |19.61         |51.21            |4.4      |333.1                |354450                 |17.95           |
+|Pet Supplies              |HIGH        |2843         |13.31         |50.04            |4.27     |109.9                |312500                 |13.92           |
+|Office Products           |MID         |4055         |4.36          |18.47            |4.41     |75.0                 |304150                 |16.81           |
+|Health  Personal Care     |HIGH        |702          |9.04          |46.07            |4.39     |390.4                |274050                 |13.63           |
+|Baby                      |MID         |15611        |1.89          |19.89            |2.94     |17.3                 |270300                 |17.37           |
+|Sports  Outdoors          |MID         |5672         |5.07          |18.6             |4.24     |46.6                 |264200                 |17.47           |
+|Home Storage  Organization|MID         |3027         |5.64          |21.53            |4.33     |82.0                 |248100                 |16.15           |
+|Toys  Games               |HIGH        |2019         |11.25         |46.91            |4.33     |113.1                |228400                 |15.9            |
+|Clothing, Shoes  Jewellery|MID         |2920         |5.63          |20.79            |4.04     |76.2                 |222450                 |19.54           |
+|Home Storage  Organization|HIGH        |2298         |12.08         |48.21            |4.35     |91.2                 |209500                 |14.45           |
++--------------------------+------------+-------------+--------------+-----------------+---------+---------------------+-----------------------+----------------+
+only showing top 20 rows
+
+
+=== Rating category vs sales ===
++---------------+-------------+--------------------+---------+---------+
+|rating_category|product_count|avg_bought_LastMonth|avg_price|avg_stars|
++---------------+-------------+--------------------+---------+---------+
+|           GOOD|      1045603|                17.2|    66.81|     4.49|
+|        AVERAGE|       184978|                 4.8|    61.09|     3.48|
+|    LOW_OR_NONE|       757435|                 0.1|    210.9|     0.02|
++---------------+-------------+--------------------+---------+---------+
+
+
+=== Top 100 sellers with category context (sample) ===
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+-----+---------+-----+-----------------+------------------+
+|title                                                                                                                                                                                                   |categoryName            |price|listPrice|stars|boughtInLastMonth|category_avg_price|
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+-----+---------+-----+-----------------+------------------+
+|AstroAI Air Compressor Tire Inflator Portable Air Pump for Car Tires 12V DC Auto Tire Pump with Digital Pressure Gauge, 100PSI with Emergency LED Light for Car, Bicycle, Balloons and Other Inflatables|Automotive Tires  Wheels|41.99|59.99    |4.4  |2000             |80.23             |
+|VacLife Air Compressor Tire Inflator - Air Pump for Car Tires - 12V DC Compact Tire Pump with Auto Shutoff Function - Multipurpose Car Accessory with LED Light, Yellow (VL718                          |Automotive Tires  Wheels|37.99|0.0      |4.5  |1000             |80.23             |
+|AstroAI Tire Inflator Air Compressor 12V DC Portable Air Compressor Car Accessories Auto Tire Pump 100PSI with LED Light Digital Air Pump for Car Tires Bicycles Other Inflatables(Yellow)              |Automotive Tires  Wheels|34.99|49.99    |4.5  |0                |80.23             |
+|Tire Inflator Portable Air Compressor, 150PSI Cordless Tire Pump with Pressure Gauge, Electric Air Pump with LED Light and Stylish Touch Screen, Smart Tire Inflator for Bike Motorcycle Car Tires Balls|Automotive Tires  Wheels|69.99|0.0      |4.7  |0                |80.23             |
+|Slime 24011 Reamer/Plunger Kit T Handle                                                                                                                                                                 |Automotive Tires  Wheels|10.97|0.0      |4.6  |800              |80.23             |
+|Extreme Tire Shine 650ML                                                                                                                                                                                |Automotive Tires  Wheels|10.97|12.99    |4.4  |700              |80.23             |
+|White Knight 1707S-20AM 12mm x 1.50 Thread Size Bulge Acorn Lug Nut, Chrome, 20-Pack                                                                                                                    |Automotive Tires  Wheels|25.08|0.0      |4.3  |500              |80.23             |
+|Mellif Cordless Tire Inflator Air Compressor for Dewalt 20V Max Battery, 160PSI Portable Handheld Air Pump with Digital Pressure Gauge for Cars Motorcycles Bikes Sport Balls(Battery Not Included)     |Automotive Tires  Wheels|52.99|59.99    |4.4  |0                |80.23             |
+|UABRLA Tire Inflator Portable Air Compressor, 2X Faster & Powerful 160PSI, Cordless Tire Inflator with Accurate LCD Pressure Gauge, Electric Air Pump for Car Tires, Motorcycle, Bike, Ball             |Automotive Tires  Wheels|89.99|0.0      |4.6  |0                |80.23             |
+|Tire Inflator Portable Air Compressor Car Tire Pump with 3 Nozzle Adaptors and Digital LED Light DC 12V Electric Car Air Pump for Car Tires and Other Inflatables Yellow                                |Automotive Tires  Wheels|29.99|0.0      |4.3  |500              |80.23             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+-----+---------+-----+-----------------+------------------+
+only showing top 10 rows
+
+
+Writing outputs to GCS...
+Pipeline complete.
+Job [fd0c96e0349647d48cf9073ff633be1b] finished successfully.
+done: true
+driverControlFilesUri: gs://dataproc-staging-us-central1-94667674826-sjkq5ce5/google-cloud-dataproc-metainfo/6f9e1e88-97af-43c9-b404-42e900034a4d/jobs/fd0c96e0349647d48cf9073ff633be1b/
+driverOutputResourceUri: gs://dataproc-staging-us-central1-94667674826-sjkq5ce5/google-cloud-dataproc-metainfo/6f9e1e88-97af-43c9-b404-42e900034a4d/jobs/fd0c96e0349647d48cf9073ff633be1b/driveroutput
+jobUuid: 50ad54ee-60d9-330b-813b-25c54268ed52
+placement:
+  clusterName: projecttwo
+  clusterUuid: 6f9e1e88-97af-43c9-b404-42e900034a4d
+pysparkJob:
+  args:
+  - gs://amz__dataset/amz_ca_total_products_data_processed.csv
+  - gs://amz__dataset/output/
+  mainPythonFileUri: gs://dataproc-staging-us-central1-94667674826-sjkq5ce5/google-cloud-dataproc-metainfo/6f9e1e88-97af-43c9-b404-42e900034a4d/jobs/fd0c96e0349647d48cf9073ff633be1b/staging/amz_dataset.py#1777588287737060
+reference:
+  jobId: fd0c96e0349647d48cf9073ff633be1b
+  projectId: projecttwo-494921
+status:
+  state: DONE
+  stateStartTime: '2026-04-30T22:33:37.446730Z'
+statusHistory:
+- state: PENDING
+  stateStartTime: '2026-04-30T22:31:27.937752Z'
+- state: SETUP_DONE
+  stateStartTime: '2026-04-30T22:31:28.035073Z'
+- details: Agent reported job success
+  state: RUNNING
+  stateStartTime: '2026-04-30T22:31:28.494084Z'
+yarnApplications:
+- memoryMbSeconds: '1203945'
+  name: AmazonProductsPipeline_PA5
+  progress: 1.0
+  state: FINISHED
+  trackingUrl: http://projecttwo-m.c.projecttwo-494921.internal.:8088/proxy/application_1777586229027_0004/
+  vcoreSeconds: '365'
